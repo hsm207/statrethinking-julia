@@ -1,0 +1,1 @@
+FROM hsm207/statrethinking-julia:latest
