@@ -2,6 +2,9 @@ module Utils
 using HTTP, CSV
 using JuMP, Ipopt, ForwardDiff
 using Distributions
+using LinearAlgebra
+
+import StatsBase
 
 export VariableSpecification, get_data, quap
 
@@ -41,4 +44,5 @@ function quap(objective_fn, vars_specs)
     optimal_points, covar_mat
 end
 
+StatsBase.cov2cor(C::AbstractMatrix) = StatsBase.cov2cor(C, diag(C) .|> sqrt)
 end
