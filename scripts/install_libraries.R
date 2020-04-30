@@ -1,7 +1,7 @@
 install.packages("tidyverse", repos="https://cloud.r-project.org/", Ncpus=8)
 
-install.packages(c("devtools","mvtnorm","loo","coda"), repos="https://cloud.r-project.org/", dependencies=TRUE, Ncpus=8)
+install.packages(c("coda","mvtnorm","devtools","loo","dagitty"), repos="https://cloud.r-project.org/", Ncpus=8)
 library(devtools)
-install_github("rmcelreath/rethinking",ref="Experimental")
+devtools::install_github("rmcelreath/rethinking", repos="https://cloud.r-project.org/")
 
-install.packages("GGally")
+install.packages("GGally", repos="https://cloud.r-project.org/")
