@@ -1,2 +1,3 @@
 using WebIO
-WebIO.install_jupyter_nbextension(ENV["JUPYTER"])
+jupyter = ENV["JUPYTER"]
+WebIO.install_jupyter_nbextension(`$jupyter`)
