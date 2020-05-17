@@ -7,6 +7,9 @@ using Gen, RCall, Statistics, DataFrames
 
 import StatsBase
 
+include("data.jl")
+using .Data
+
 export get_data,
        get_posterior_samples,
        get_prediction_log_probs, 
@@ -16,10 +19,6 @@ export get_data,
        summarize_posterior_samples,
        VariableSpecification,
        waic
-
-build_url(filename) = "https://raw.githubusercontent.com/rmcelreath/rethinking/master/data/$(filename).csv"
-retrieve_file(url) = HTTP.get(url).body |> IOBuffer |> CSV.read
-get_data(filename) = build_url(filename) |> retrieve_file
 
 struct VariableSpecification
     lower_bound::Float64
